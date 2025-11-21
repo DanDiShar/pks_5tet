@@ -18,7 +18,7 @@
 - Заголовок (title)
 - Текст заметки (body)
 - Метод `copyWith()` для удобного обновления объектов
-
+```
 class Note {
   final String id;
   String title;
@@ -32,7 +32,7 @@ class Note {
         body: body ?? this.body,
       );
 }
-
+```
 ### 2. Главный экран со списком заметок
 В `main.dart` реализован экран `NotesPage` с возможностями:
 - Отображение списка в виде карточек с закругленными углами
@@ -68,7 +68,7 @@ body: ListView.builder(
 - Валидация обязательных полей
 - Автогенерация ID для новых заметок
 - Обновление существующих через метод `copyWith`
-
+```
 void _save() {
   if (!_formKey.currentState!.validate()) return;
   _formKey.currentState!.save();
@@ -83,7 +83,7 @@ void _save() {
 
   Navigator.pop(context, result);
 }
-
+```
 ### 4. Удаление элементов
 Реализовано двумя способами:
 - Кнопка удаления в карточке
@@ -104,11 +104,11 @@ Dismissible(
 ```
 ### 5. Система поиска
 Поиск реализован через `SearchDelegate` с фильтрацией по заголовку:
-
+```
 final filtered = _notes
     .where((n) => n.title.toLowerCase().contains(_search.toLowerCase()))
     .toList();
-
+```
 ---
 
 ## Скриншоты приложения
